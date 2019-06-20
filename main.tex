@@ -1,0 +1,574 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath,amsthm,amssymb,amsfonts, fancyhdr, graphicx, environ}
+\usepackage{color}
+\definecolor{grey}{rgb}{0.6,0.6,0.6}
+\pagestyle{fancy}
+\setlength{\headheight}{65pt}
+\setlength{\parskip}{2em}
+\newenvironment{wzor}[1]{\par{\Large $\longrightarrow$ \textit{#1}}}
+    {\newline {\color{grey} \rule{\linewidth}{0.3pt}}}
+\DeclareMathOperator{\der}{\operatorname{d}\!}
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fill in the appropriate information below
+\lhead{EiTI}  %replace with your name
+\rhead{Fizyka --- Wzory}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{wzor}{Gradient}
+    \begin{equation}
+        \nabla f(x,y,z) = \left[
+                \frac{\partial f}{\partial x},\,
+                \frac{\partial f}{\partial y},\,
+                \frac{\partial f}{\partial z}
+        \right]
+    \end{equation}
+    Gradient to pole wektorowe wskazujące kierunki najszybszych wzrostów wartości
+    danego pola skalarnego.
+\end{wzor}
+
+\begin{wzor}{Strumień pola}
+    \begin{equation}
+        \Phi_S = \int\limits_S \Vec{G} \, \der \Vec{S}
+    \end{equation}
+    Gdy $\Phi = 0$, linie sił biegną w sposób ciągły wewnątrz pewnej zamkniętej powierzchni,
+    czyli tyle samo linii do niej wchodzi i z niej wychodzi;\\
+    Gdy $\Phi > 0$, wewnątrz zamkniętej krzywej występują źródła linii sił pola;\\
+    Gdy $\Phi < 0$, wewnątrz zamkniętej krzywej występują zlewy linii sił pola.
+\end{wzor}
+
+\begin{wzor}{Dywergencja}
+    \begin{equation}
+        \mathrm{div} F(x,y,z) = \frac{\partial F_1(x,y,z)}{\partial x}
+                + \frac{\partial F_2(x,y,z)}{\partial y}
+                + \frac{\partial F_3(x,y,z)}{\partial z}
+    \end{equation}
+    Miara ,,rozbieżności'' pola wektorowego w otoczeniu danego punktu.
+\end{wzor}
+
+\begin{wzor}{Twierdzenie Ostrogradskiego - Gaussa}
+    \begin{equation}
+        \oint\limits_S \Vec{F} \, \der \Vec{a} = \iiint\limits_{V(S)} \nabla \Vec{F} \, \der\tau
+    \end{equation}
+    Twierdzenie to umożliwia zamianę całki powierzchniowej na objętościową i na odwrót.
+\end{wzor}
+
+\begin{wzor}{Rotacja}
+    \begin{equation}
+        \mathrm{rot}(\Vec{F}) = \nabla \times \Vec{F}
+    \end{equation}
+\end{wzor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{wzor}{Cyrkulacja pola wektorowego}
+    \begin{equation}
+        \Gamma = \oint\limits_C V \, \der s = \iint\limits_S (\nabla \times V) \, \der S
+    \end{equation}
+    Cyrkulacja pola wektorowego po danym konturze zamkniętym $C$ jest równa strumieniowi
+    rotacji tego pola wektorowego na obszarze $S = \overline{C}$ ograniczonym tym konturem.
+\end{wzor}
+
+\begin{wzor}{Potencjały pola wektorowego}
+    \par \textit{Potencjał skalarny}
+    \begin{equation}
+        \mathbf{F} = - \nabla V
+    \end{equation}
+    $\mathbf{F}$ -- pole wektorowe\\
+    $V$ -- potencjał skalarny pola $\mathbf{F}$
+    \par \textit{Potencjał wektorowy}
+    \begin{equation}
+        \mathbf{F} = \nabla \times \mathbf{A}
+    \end{equation}
+    $\mathbf{A}$ -- potencjał wektorowy (który też jest polem wektorowym) pola $\mathbf{F}$
+\end{wzor}
+
+\begin{wzor}{Siła Coulomba}
+    \begin{equation}
+        F = k \frac{|q_1 q_2|}{r^2}
+    \end{equation}
+    Jest to siła oddziałująca między dwoma ładunkami elektrycznymi.
+\end{wzor}
+
+\begin{wzor}{Pole elektryczne}
+    \begin{equation}
+        \Vec{E} = \int \der \Vec{E}
+    \end{equation}
+    Pole elektryczne wytworzone przez ciągły rozkład ładunków, gdzie $d\Vec{E}$ to
+    natężenie pola pochodzące od pojedynczego ładunku punktowego $dq$.
+\end{wzor}
+
+\begin{wzor}{Potencjał elektryczny}
+    \begin{equation}
+        V(r) = - \int\limits_P^R \Vec{E} \, \der\Vec{l}
+    \end{equation}
+    Potencjał jest to praca potrzebna na przemieszczenie ładunku z punktu odniesienia
+    do danego punktu
+\end{wzor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{wzor}{Potencjał ładunku punktowego}
+    \begin{equation}
+        \begin{split}
+            V_P &= \frac{W_{P \to \infty}}{q}\\
+            W_{P \to \infty} &= E_P - E_\infty\\
+            E_P &= \frac{1}{4\pi\varepsilon_0} \cdot \frac{qQ}{r}\\
+            V_P &= \frac{W_{P \to \infty}}{q} = \frac{E_P}{q} - \frac{E_\infty}{q} = \frac{E_P}{q} - 0\\
+            &= \frac{1}{4\pi\varepsilon_0} \cdot \frac{Q}{r}
+        \end{split}
+    \end{equation}
+\end{wzor}
+
+\begin{wzor}{Potencjał dla ciągłego rozkładu ładunków}
+    \begin{equation}
+        V(r) = \frac{1}{4\pi\varepsilon_0} \int \frac{\der q}{r}
+    \end{equation}
+\end{wzor}
+
+\begin{wzor}{Indukcja elektryczna}
+    \begin{align}
+        D &= \frac{Q}{S}\\
+        \Vec{D} &= \varepsilon \Vec{E}
+    \end{align}
+    $\Vec{E}$ -- wektor natężenia pola elektrycznego\\
+    $\varepsilon$ -- przenikalność elektryczna materiału
+\end{wzor}
+
+\begin{wzor}{Prawo Gaussa}
+    \begin{align}
+        \Phi &= \frac{Q_{wew}}{\varepsilon_0}\\
+        \Phi &= \oint\limits_S \Vec{E} \, \der \Vec{S}
+    \end{align}
+    $\Phi$ -- strumień pola elektrycznego\\
+    $Q_{wew}$ -- ładunek elektryczny zawarty wewnątrz powierzchni $S$\\
+    $S$ -- zamknięta powierzchnia, przez którą przenika ładunek (powierzchnia Gaussa)
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \par {\textit{Prawo Gaussa dla indukcji elektrycznej}}
+    \begin{align}
+        \oint\limits_S \Vec{D} \, \der\Vec{S} &= Q_{sw} \\
+        \nabla \cdot \Vec{E} &= \frac{\rho_c}{\varepsilon_0}
+    \end{align}
+    $\Vec{D}$ -- wektor indukcji elektrycznej\\
+    $Q_{sw}$ -- ładunek swobodny\\
+    $\rho_c$ -- gęstość objętościowa ładunku całkowitego
+\end{wzor}
+
+\begin{wzor}{Polaryzacja dielektryka liniowego}
+    \begin{align}
+        \Vec{P} &= \varepsilon_0 \chi_e \Vec{E}\\
+        \Vec{E} &= \Vec{E_0} - \frac{1}{\varepsilon_0} \Vec{P}
+                 = \frac{1}{\chi + 1} \Vec{E_0}
+                 = \frac{1}{\varepsilon} \Vec{E_0}
+    \end{align}
+    $\Vec{P}$ -- wektor polaryzacji dielektryka\\
+    $\varepsilon_0$ -- przenikalność elektryczna w próżni\\
+    $\chi_e$ -- podatność elektryczna\\
+    $\Vec{E}$ -- wypadkowe pole elektryczne w dielektryku\\
+    $\Vec{E_0}$ -- zewnętrzne pole elektryczne przyłożone do dielektryka\\
+    $\varepsilon$ -- przenikalność względna dielektryka
+\end{wzor}
+
+\begin{wzor}{Kondensatory}
+    \par\textit{Pojemność}
+    \begin{align}
+        C &= \frac{Q}{U}\\
+        C &= \frac{S\varepsilon_0 \varepsilon_r}{d}
+    \end{align}
+    $S$ -- powierzchnia okładki\\
+    $d$ -- odległość między okładkami
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \par \textit{Łączenie kondensatorów} 
+    \begin{align}
+        \text{Szeregowo: } \frac{1}{C_z} &= \sum\limits_{i=1}^n \frac{1}{C_i} \\
+        \text{Równolegle: } C_z &= \sum\limits_{i=1}^n C_i
+    \end{align}
+\end{wzor}
+
+\begin{wzor}{Prąd elektryczny}
+    \begin{equation}
+        I = \frac{\der q}{\der t}
+    \end{equation}
+    Natężeniem prądu nazywamy ładunek przepływający przez przewodnik w jednostkowym czasie
+    przez przekrój tego przewodnika.
+\end{wzor}
+
+\begin{wzor}{Równanie ciągłości}
+    \begin{equation}
+        \nabla \cdot j = - \frac{\partial \rho}{\partial t}
+    \end{equation}
+    $j$ -- gęstość prądu elektrycznego\\
+    $\rho$ -- gęstość ładunku elektrycznego\\
+    Zmiana ładunku w pewnej objętości jest równa sumarycznemu ładunkowi,
+    który wypłynął lub wpłynął przez brzeg ograniczający tę objętość.
+\end{wzor}
+
+\begin{wzor}{Siła Lorentza}
+    \begin{equation}
+        \Vec{F} = q(\Vec{v} \times \Vec{B})
+    \end{equation}
+    $\Vec{F}$ -- wektor siły\\
+    $q$ -- ładunek elektryczny cząstki\\
+    $\Vec{v}$ -- wektor prędkości cząstki\\
+    $\Vec{B}$ -- pseudowektor indukcji magnetycznej
+\end{wzor}
+
+\begin{wzor}{Siła elektrodynamiczna}
+    \begin{equation}
+        \Vec{F} = I \cdot \Vec{l} \times \Vec{B}
+    \end{equation}
+    $I$ -- natężenie prądu płynącego przez przewodnik\\
+    $\Vec{l}$ -- wektor długości przewodnika
+\end{wzor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{wzor}{Prawo Ohma}
+    \par \textit{Prawo Ohma w postaci różniczkowej}
+    \begin{equation}
+        \Vec{j} = \sigma \Vec{E}
+    \end{equation}
+    $\Vec{j}$ -- wektor gęstości prądu w przewodniku\\
+    $\sigma$ -- konduktywność (przewodnictwo właściwe)\\
+    $\Vec{E}$ -- wektor pola elektrycznego w przewodniku
+    \par \textit{Prawo Ohma w postaci makroskopowej}
+    \begin{equation}
+        U = I \cdot R
+    \end{equation}
+\end{wzor}
+
+\begin{wzor}{Prawo Biota-Savarta}
+    \begin{equation}
+        \der\Vec{B} = \frac{\mu_0}{4\pi} \, I \, \frac{\der\Vec{l}\times \Vec{r}}{r^3} \implies
+        \der B = \frac{\mu_0}{4\pi} \, I \, \frac{\der l}{r^2} \, \sin \alpha
+    \end{equation}
+    $\der\Vec{B}$ -- wkład do pola indukcji magnetycznej\\
+    $I$ -- natężenie prądu w przewodniku\\
+    $\der\Vec{l}$ -- nieskończenie mały fragment przewodnika o wektorze długości $\Vec{l}$\\
+    $\Vec{r}$ -- wektor wodzący o początku w źródle pola (fragmencie przewodnika)
+        i końcu w rozważanym punkcie przestrzeni\\
+    $r$ -- odległość od źródła pola do rozważanego punktu przestrzeni, $r = |\Vec{r}|$\\
+    $\alpha$ -- kąt pomiędzy $\der\Vec{l}$ a $\Vec{r}$
+\end{wzor}
+
+\begin{wzor}{Prawo Ampère'a}
+    \begin{equation}
+        \oint \Vec{B} \, \der\Vec{l} = \mu_0 I
+    \end{equation}
+    Prawo to wiąże indukcję magnetyczną wokół przewodnika z natężeniem prądu elektrycznego
+    przepływającego w tym przewodniku.
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    \par \textit{Prawo Ampère'a z wykorzystaniem natężenia pola magnetycznego}
+    \begin{equation}
+        \oint\limits_C \Vec{H} \, \der\Vec{l} = \int\limits_S \Vec{J} \, \der\Vec{a} = I
+    \end{equation}
+    $\Vec{H}$ -- wektor natężenia pola magnetycznego (powierzchniowego)\\
+    $C$ -- krawędź ograniczająca rozpatrywaną powierzchnię\\
+    $\Vec{J}$ -- gęstość prądu (powierzchniowa)\\
+    $S$ -- rozpatrywana powierzchnia przewodnika ($\Vec{a}$)
+    
+    \par \textit{Postać różniczkowa}
+    \begin{equation}
+        \nabla \times \Vec{H} = \Vec{J}
+    \end{equation}
+\end{wzor}
+
+\begin{wzor}{Twierdzenie Helmholtza}
+    \begin{equation}
+        \nabla \cdot \mathbf{A} = 0 \implies \mathbf{F} = - \Delta V + \nabla \times \mathbf{A}
+    \end{equation}
+    $\mathbf{F}$ -- pole wektorowe\\
+    $\mathbf{A}$ -- potencjał wektorowy pola $\mathbf{F}$ o dywergencji równej 0\\
+    $V$ -- potencjał skalarny pola $\mathbf{F}$
+\end{wzor}
+
+\begin{wzor}{Magnetyzacja}
+    \begin{equation}
+        \begin{split}
+            \mathbf{M} &= \frac{\Delta \mathbf{m}}{\Delta V}\\
+            \mathbf{M} &= \frac{\der \mathbf{m}}{\der V}
+        \end{split}
+    \end{equation}
+    $\mathbf{M}$ -- pole wektorowe magnetyzacji\\
+    $\mathbf{m}$ -- magnetyczny moment dipolowy\\
+    $V$ -- objętość
+\end{wzor}
+
+\begin{wzor}{Prawo Faradaya}
+    \begin{equation}
+        \varepsilon = - \frac{\der\varphi}{\der t}
+    \end{equation}
+    $\varepsilon$ -- siła elektromotoryczna\\
+    $\varphi$ -- strumień indukcji magnetycznej\\
+    $\frac{\der\varphi}{\der t}$ -- szybkość zmian strumienia
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    \par \textit{Prawo Faradaya w postaci całkowej}
+    \begin{equation}
+        \varepsilon = \oint\limits_C \Vec{E} \, \der\Vec{l}
+            = - \frac{\der}{\der t} \int\limits_S \Vec{B} \, \der\Vec{s}
+    \end{equation}
+    $\Vec{E}$ -- natężenie indukowanego pola elektrycznego\\
+    $C$ -- pętla z przewodnika\\
+    $\Vec{B}$ -- wektor indukcji magnetycznej\\
+    $S$ -- powierzchnia zamknięta pętlą $C$
+    
+    \par \textit{Prawo Faradaya w postaci różniczkowej}
+    \begin{equation}
+        \nabla \times \Vec{E} = - \frac{\partial \Vec{B}}{\partial t}
+    \end{equation}
+    Jest to jedno z \textbf{równań Maxwella}.
+\end{wzor}
+
+\begin{wzor}{\textbf{Równania Maxwella}}
+    \par {\large \textsc{Postać całkowa}}
+    \par \textit{Prawo Faradaya}
+    \begin{equation}
+        \begin{split}
+            \oint\limits_C \Vec{E} \, \der\Vec{l} &= - \frac{\der\varphi}{\der t}\\
+            \oint\limits_C \Vec{E} \, \der\Vec{l}
+                &= - \frac{\der}{\der t} \int\limits_S \Vec{B} \, \der\Vec{s}
+        \end{split}
+    \end{equation}
+    $\Vec{E}$ -- natężenie pola elektrycznego\\
+    $C$ -- dowolny zamknięty kontur\\
+    $\varphi$ -- strumień indukcji pola magnetycznego\\
+    $\Vec{B}$ -- indukcja pola magnetycznego
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    \par \textit{Uogólnione prawo Ampère'a}
+    \begin{equation}
+        \begin{split}
+            \oint\limits_C \Vec{B} \, \der\Vec{l}
+                &= \mu I + \mu \varepsilon \frac{\der\Phi_E}{\der t}\\
+            \oint\limits_C \Vec{B} \, \der\Vec{l}
+                &= \mu I + \mu \varepsilon \frac{\der}{\der t} \int\limits_S \Vec{E} \, \der\Vec{s}
+        \end{split}
+    \end{equation}
+    $C$ -- dowolny zamknięty kontur\\
+    $I$ -- całkowity prąd elektryczny przepływający przez powierzchnię $S$ wewnątrz konturu $C$\\
+    $\Phi_E$ -- strumień pola elektrycznego przez tę powierzchnię\\
+    $\mu$ -- przenikalność magnetyczna ośrodka\\
+    $\varepsilon$ -- przenikalność elektryczna ośrodka
+    
+    \par \textit{Prawo Gaussa dla elektryczności}
+    \begin{equation}
+        \varepsilon \, \oint\limits_S \Vec{E} \, \der\Vec{s} = q
+    \end{equation}
+    $\varepsilon$ -- przenikalność elektryczna ośrodka\\
+    $q$ -- całkowity ładunek zawarty wewnątrz powierzchni zamkniętej $S$
+    
+    \par \textit{Prawo Gaussa dla magnetyzmu}
+    \begin{equation}
+        \oint\limits_S \Vec{B} \, \der\Vec{s} = 0
+    \end{equation}
+    
+    \par {\large \textsc{Postać różniczkowa}}
+    \par \textit{Prawo Faradaya}
+    \begin{equation}
+        \nabla \times \Vec{E} = - \frac{\partial \Vec{B}}{\partial t}
+    \end{equation}
+    $\rightarrow$ Zmienne w czasie pole magnetyczne wytwarza pole elektryczne. $\leftarrow$
+    
+    \par \textit{Uogólnione prawo Ampère'a}
+    \begin{equation}
+        \nabla \times \Vec{B} = \mu \Vec{j} + \mu \varepsilon \frac{\partial \Vec{E}}{\partial t}
+    \end{equation}
+    $\Vec{j}$ -- gęstość prądu elektrycznego\\
+    $\rightarrow$ Przepływający prąd oraz zmienne pole elektryczne wytwarzają pole magnetyczne.
+    $\leftarrow$
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    \par \textit{Prawo Gaussa dla elektryczności}
+    \begin{equation}
+        \varepsilon \nabla \cdot \Vec{E} = \rho
+    \end{equation}
+    $\rho$ -- gęstość ładunku elektrycznego\\
+    $\rightarrow$ Ładunki są źródłem pola elektrycznego. $\leftarrow$
+    
+    \par \textit{Prawo Gaussa dla magnetyzmu}
+    \begin{equation}
+        \nabla \cdot \Vec{B} = 0
+    \end{equation}
+    $\rightarrow$ Pole magnetyczne jest bezźródłowe. $\leftarrow$
+\end{wzor}
+
+\begin{wzor}{Funkcja falowa}
+    \par Funkcja falowa musi zanikać w nieskończoności, musi być ciągła oraz
+    jej pochodna musi być ciągła, jeśli potencjał jest skończony.
+    \par \textit{Unormowanie funkcji falowej}
+    \begin{equation}
+        \int\limits_{-\infty}^\infty |\Psi|^2 \, \der x = 1 \iff
+            \int\limits_{-\infty}^\infty \Psi \cdot \overline{\Psi} \, \der x = 1
+    \end{equation}
+    \par \textit{Postulat o średniej}
+    \begin{equation}
+        \langle A \rangle = \int\limits_{-\infty}^\infty \overline{\Psi} \hat{A} \Psi \, \der x
+    \end{equation}
+    $A$ -- mierzona wielkość fizyczna, której odpowiada operator $\hat{A}$
+\end{wzor}
+
+\begin{wzor}{Operator Hamiltona}
+    \begin{align}
+        \hat{x_\xi} &= x_\xi\\
+        \hat{p_\xi} &= -i \hbar \frac{\partial}{\partial x_\xi}\\
+        \Omega(p_\xi, x_\xi) \implies \hat{\Omega} &= \Omega(\hat{p_\xi}, \hat{x_\xi})
+    \end{align}
+    $x_\xi$ -- współrzędna w osi $\xi$\\
+    $p_\xi$ -- pęd w osi $\xi$\\
+    $\Omega$ -- dowolna funkcja pędu i położenia
+\end{wzor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{wzor}{Równania Schrödingera}
+    \par \textit{Niezależne od czasu}
+    \begin{equation}
+        -\frac{\hbar^2}{2m} \cdot \frac{\partial^2 \Psi}{\partial x^2} + V\Psi = E\Psi
+    \end{equation}
+    \par \textit{Zależne od czasu}
+    \begin{equation}
+        i\hbar \frac{\partial \Psi}{\partial t} =
+            -\frac{\hbar^2}{2m}\cdot \frac{\partial^2 \Psi}{\partial x^2} + V\Psi
+    \end{equation}
+    \par \textit{Gęstość prądu prawdopodobieństwa}
+    \begin{equation}
+        \begin{split}
+            \mathbf{j} &= \frac{i\hbar}{2m}
+                (\Psi \nabla \overline{\Psi} - \overline{\Psi} \nabla \Psi)\\
+            j_x &= \frac{i\hbar}{2m}
+                \left( \Psi \frac{\der\overline{\Psi}}{\der x}
+                    - \overline{\Psi} \frac{\der\Psi}{\der x} \right)
+        \end{split}
+    \end{equation}
+\end{wzor}
+
+\begin{wzor}{Model atomu Bohra}
+    \begin{itemize}
+        \item Elektron krąży po konkretnych stabilnych orbitach wokół jądra
+            bez wypromieniowywania żadnej energii, w przeciwieństwie do tego,
+            co sugeruje klasyczna elektrodynamika. Te orbity są nazywane stacjonarnymi
+            i znajdują się w konkretnych odległościach od jądra atomu. Elektron
+            nie może mieć żadnej orbity pomiędzy nimi.
+        \item Moment pędu i promień dopuszczalnych orbit (możliwych stanów stacjonarnych)
+            \begin{equation}
+                L = m_e v r = n\hbar, \: n \in \mathbb{N}
+            \end{equation}
+            $L$ -- moment pędu elektronu\\
+            $m_e$ -- masa elektronu\\
+            $v$ -- prędkość elektronu\\
+            $r$ -- promień orbity\\
+            $n$ -- liczba naturalna ($n \in \{1, 2, 3, ...\}$)
+            \begin{equation}
+                \langle E_k \rangle = \frac{1}{2}nhf, \: n \in \mathbb{N}
+            \end{equation}
+            $\langle E_k \rangle$ -- średnia energia kinetyczna elektronu\\
+            $f$ -- częstotliwość obiegu przez elektron jądra atomu
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    \item Dynamiką w stanach stacjonarnych rządzi mechanika Newtonowska,
+        która jednak nie obowiązuje podczas przejść między stanami stacjonarnymi.
+    \item Każdej emisji lub absorbcji energii towarzyszy przejście elektronu
+        między dwoma stanami stacjonarnymi.
+        \begin{equation}
+            \Delta E = E_2 - E_1 = h \nu
+        \end{equation}
+        $\nu$ -- częstotliwość fotonu
+    \end{itemize}
+\end{wzor}
+
+\begin{wzor}{Entropia}
+    \begin{equation}
+        S = k \ln(\Delta \Gamma)
+    \end{equation}
+    $S$ -- entropia\\
+    $k$ -- stała Boltzmanna\\
+    $\Delta\Gamma$ -- liczba mikrostanów realizujących dany makrostan
+\end{wzor}
+
+\begin{wzor}{Rozkład Bosego-Einsteina}
+    \begin{equation}
+        \langle n_i \rangle = \frac{n}{Z} \cdot
+            \frac{g_i}{\exp\big(\beta(E_i - \mu)\big) - 1}
+    \end{equation}
+    $\langle n_i \rangle$ -- średnia liczba cząstek w $i$-tym stanie\\
+    $E_i$ -- energia $i$-tego stanu\\
+    $g_i$ -- degeneracja $i$-tego stanu\\
+    $n$ -- całkowita liczba cząstek\\
+    $\mu$ -- potencjał chemiczny\\
+    $\beta = \frac{1}{kT}$, gdzie $T$ -- temperatura w Kelvinach, $k$ -- stała Boltzmanna\\
+    $Z = \sum\limits_i \frac{g_i}{\exp(\beta(E_i - \mu)) - 1}$
+        -- suma statystyczna
+\end{wzor}
+
+\begin{wzor}{Rozkład Fermiego-Diraca}
+    \begin{equation}
+        \langle n \rangle = \frac{1}{\exp\big(\beta(E - \mu)\big) + 1}
+    \end{equation}
+    $\langle n \rangle$ -- średnia liczba cząstek w niezdegenerowanym stanie energetycznym $E$
+\end{wzor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+\begin{wzor}{Zliczanie stanów}
+    \par \textit{W układach z bozonami}
+    \begin{equation}
+        W_i^B = \binom{g_i + n_i - 1}{n_i}
+    \end{equation}
+    $g_i$ -- liczba stanów\\
+    $n_i$ -- liczba cząsteczek
+    \par \textit{W układach z fermionami}
+    \begin{equation}
+        W_i^F = \binom{g_i}{n_i}
+    \end{equation}
+\end{wzor}
+
+\begin{bottompar}
+    {\footnotesize \ttfamily (CC BY-SA 4.0) 2019 Błażej Sewera - blazejok1[at]wp.pl\par
+    kod źródłowy: https://github.com/jazzsewera/fog-wzory}
+\end{bottompar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}

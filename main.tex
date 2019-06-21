@@ -41,7 +41,7 @@
 
 \begin{wzor}{Strumień pola}
     \begin{equation}
-        \Phi_S = \int\limits_S \Vec{G} \, \der \Vec{S}
+        \Phi_S = \int\limits_S \Vec{G} \, \der \Vec{s}
     \end{equation}
     Gdy $\Phi = 0$, linie sił biegną w sposób ciągły wewnątrz pewnej zamkniętej powierzchni,
     czyli tyle samo linii do niej wchodzi i z niej wychodzi;\\
@@ -51,7 +51,7 @@
 
 \begin{wzor}{Dywergencja}
     \begin{equation}
-        \mathrm{div} F(x,y,z) = \frac{\partial F_1(x,y,z)}{\partial x}
+        \operatorname{div} \mathbf{F}(x,y,z) = \frac{\partial F_1(x,y,z)}{\partial x}
                 + \frac{\partial F_2(x,y,z)}{\partial y}
                 + \frac{\partial F_3(x,y,z)}{\partial z}
     \end{equation}
@@ -77,7 +77,8 @@
 
 \begin{wzor}{Cyrkulacja pola wektorowego}
     \begin{equation}
-        \Gamma = \oint\limits_C V \, \der s = \iint\limits_S (\nabla \times V) \, \der S
+        \Gamma = \oint\limits_C \mathbf{G} \, \der s
+            = \iint\limits_S (\nabla \times \mathbf{G}) \, \der S
     \end{equation}
     Cyrkulacja pola wektorowego po danym konturze zamkniętym $C$ jest równa strumieniowi
     rotacji tego pola wektorowego na obszarze $S = \overline{C}$ ograniczonym tym konturem.
@@ -108,8 +109,8 @@
     \begin{equation}
         \Vec{E} = \int \der \Vec{E}
     \end{equation}
-    Pole elektryczne wytworzone przez ciągły rozkład ładunków, gdzie $d\Vec{E}$ to
-    natężenie pola pochodzące od pojedynczego ładunku punktowego $dq$.
+    Pole elektryczne wytworzone przez ciągły rozkład ładunków, gdzie $\der\Vec{E}$ to
+    natężenie pola pochodzące od pojedynczego ładunku punktowego $\der q$.
 \end{wzor}
 
 \begin{wzor}{Potencjał elektryczny}
@@ -301,7 +302,7 @@
 
 \begin{wzor}{Twierdzenie Helmholtza}
     \begin{equation}
-        \nabla \cdot \mathbf{A} = 0 \implies \mathbf{F} = - \Delta V + \nabla \times \mathbf{A}
+        \nabla \cdot \mathbf{A} = 0 \implies \mathbf{F} = - \nabla V + \nabla \times \mathbf{A}
     \end{equation}
     $\mathbf{F}$ -- pole wektorowe\\
     $\mathbf{A}$ -- potencjał wektorowy pola $\mathbf{F}$ o dywergencji równej 0\\
